@@ -1447,8 +1447,8 @@ namespace nzsl::Ast
 		return clone;
 	}
 
-NAZARA_WARNING_PUSH()
-NAZARA_WARNING_GCC_DISABLE("-Wmaybe-uninitialized")
+	NAZARA_WARNING_PUSH()
+	NAZARA_WARNING_CLANG_GCC_DISABLE("-Wmaybe-uninitialized")
 
 	StatementPtr SanitizeVisitor::Clone(DeclareExternalStatement& node)
 	{
@@ -1661,7 +1661,7 @@ NAZARA_WARNING_GCC_DISABLE("-Wmaybe-uninitialized")
 		return clone;
 	}
 
-NAZARA_WARNING_POP()
+	NAZARA_WARNING_POP()
 
 	StatementPtr SanitizeVisitor::Clone(DeclareFunctionStatement& node)
 	{
@@ -4621,6 +4621,8 @@ NAZARA_WARNING_POP()
 			{
 				case PrimitiveType::Boolean:
 				case PrimitiveType::String:
+				case PrimitiveType::UntypedFloat:
+				case PrimitiveType::UntypedInteger:
 					return false;
 
 				case PrimitiveType::Float32:
@@ -4635,6 +4637,8 @@ NAZARA_WARNING_POP()
 						case PrimitiveType::Float64:
 						case PrimitiveType::Int32:
 						case PrimitiveType::UInt32:
+						case PrimitiveType::UntypedFloat:
+						case PrimitiveType::UntypedInteger:
 							return true;
 					}
 
@@ -4653,6 +4657,8 @@ NAZARA_WARNING_POP()
 						case PrimitiveType::Float64:
 						case PrimitiveType::Int32:
 						case PrimitiveType::UInt32:
+						case PrimitiveType::UntypedFloat:
+						case PrimitiveType::UntypedInteger:
 							return true;
 					}
 
@@ -4671,6 +4677,8 @@ NAZARA_WARNING_POP()
 						case PrimitiveType::Float64:
 						case PrimitiveType::Int32:
 						case PrimitiveType::UInt32:
+						case PrimitiveType::UntypedFloat:
+						case PrimitiveType::UntypedInteger:
 							return true;
 					}
 
@@ -4689,6 +4697,8 @@ NAZARA_WARNING_POP()
 						case PrimitiveType::Float64:
 						case PrimitiveType::Int32:
 						case PrimitiveType::UInt32:
+						case PrimitiveType::UntypedFloat:
+						case PrimitiveType::UntypedInteger:
 							return true;
 					}
 
@@ -5248,6 +5258,8 @@ NAZARA_WARNING_POP()
 							case PrimitiveType::Float64:
 							case PrimitiveType::Int32:
 							case PrimitiveType::UInt32:
+							case PrimitiveType::UntypedFloat:
+							case PrimitiveType::UntypedInteger:
 								return true;
 						}
 
@@ -5282,6 +5294,8 @@ NAZARA_WARNING_POP()
 							case PrimitiveType::Float64:
 							case PrimitiveType::Int32:
 							case PrimitiveType::UInt32:
+							case PrimitiveType::UntypedFloat:
+							case PrimitiveType::UntypedInteger:
 								return true;
 						}
 
@@ -5381,6 +5395,8 @@ NAZARA_WARNING_POP()
 							case PrimitiveType::Float64:
 							case PrimitiveType::Int32:
 							case PrimitiveType::UInt32:
+							case PrimitiveType::UntypedFloat:
+							case PrimitiveType::UntypedInteger:
 								return true;
 						}
 
@@ -5415,6 +5431,8 @@ NAZARA_WARNING_POP()
 							case PrimitiveType::Float64:
 							case PrimitiveType::Int32:
 							case PrimitiveType::UInt32:
+							case PrimitiveType::UntypedFloat:
+							case PrimitiveType::UntypedInteger:
 								return true;
 						}
 
@@ -5447,6 +5465,8 @@ NAZARA_WARNING_POP()
 							case PrimitiveType::Float32:
 							case PrimitiveType::Float64:
 							case PrimitiveType::Int32:
+							case PrimitiveType::UntypedFloat:
+							case PrimitiveType::UntypedInteger:
 								return true;
 						}
 
@@ -5481,6 +5501,8 @@ NAZARA_WARNING_POP()
 							case PrimitiveType::Float32:
 							case PrimitiveType::Float64:
 							case PrimitiveType::Int32:
+							case PrimitiveType::UntypedFloat:
+							case PrimitiveType::UntypedInteger:
 								return true;
 						}
 
