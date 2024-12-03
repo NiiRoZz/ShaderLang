@@ -1268,12 +1268,12 @@ namespace nzsl::Ast
 		m_deserializer.Deserialize(val);
 	}
 
-	void ShaderAstUnserializer::Value(std::int64_t& val)
+	void ShaderAstDeserializer::Value(std::int64_t& val)
 	{
-		m_unserializer.Unserialize(val);
+		m_deserializer.Deserialize(val);
 	}
 
-	void ShaderAstUnserializer::Value(Vector2<bool>& val)
+	void ShaderAstDeserializer::Value(Vector2<bool>& val)
 	{
 		m_deserializer.Deserialize(val.x());
 		m_deserializer.Deserialize(val.y());
